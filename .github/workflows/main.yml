@@ -20,3 +20,4 @@ jobs:
     - name: build with pyinstaller
       run: |
         pyinstaller calculator.py
+        actions/upload-release-asset@v1
