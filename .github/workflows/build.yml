@@ -3,6 +3,7 @@
 # https://disq.us/url?url=https%3A%2F%2Fgithub.com%2Fmc51%2FClipster-Desktop-Py%2Fblob%2Fmaster%2F.github%2Fworkflows%2Fbuild.yml%3AZJ-RKKLQpyCE2vHnDi0ECYvd2Bk&cuid=4933803
 
 name: Build
+
 on:
   push:
     # tags:
