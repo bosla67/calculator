@@ -1,11 +1,37 @@
-steps:
-- uses: actions/checkout@v2
+name: test
 
-- run: mkdir -p testdir
+on: 
+  push:
+    branches: master
 
-- run: echo hello > testdir/world.txt
+jobs:
+  build:
 
-- uses: actions/upload-artifact@v2
-  with:
-    name: my-artifact
-    path: testdir/world.txt
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: mkdir -p testdir
+
+    - run: echo hello > testdir/world.txt
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: testdir/world.txt
+
+    - run: echo hi > world.txt
+    - uses: actions/upload-artifact@v2
+      with:
+        path: world.txt
+
+    - run: echo howdy > extra-file.txt
+    - uses: actions/upload-artifact@v2
+      with:
+        path: extra-file.txt
+
+    - run: echo hello > world.txt
+    - uses: actions/upload-artifact@v2
+      with:
+        path: world.txt
