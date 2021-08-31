@@ -42,12 +42,12 @@ jobs:
         include:
           - os: macos-latest
             TARGET: macos
-            CMD_BUILD: pyinstaller -F -w -n calculator -i resources/Calculator.icns cli.py && cd dist/ && zip -r9 calculator calculator.app/
+            CMD_BUILD: pyinstaller -F -w -n calculator -i resources/Calculator.icns calculator.py && cd dist/ && zip -r9 calculator calculator.app/
             OUT_FILE_NAME: calculator.zip
             ASSET_MIME: application/zip
           - os: windows-latest
             TARGET: windows
-            CMD_BUILD: pyinstaller -F -w -n calculator -i resources/Calculator.ico cli.py
+            CMD_BUILD: pyinstaller -F -w -n calculator -i resources/Calculator.ico calculator.py
             OUT_FILE_NAME: calculator.exe
             ASSET_MIME: application/vnd.microsoft.portable-executable
     steps:
